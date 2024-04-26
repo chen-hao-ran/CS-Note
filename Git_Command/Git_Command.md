@@ -41,3 +41,9 @@ git config --global https.https://github.com.proxy https://127.0.0.1:7890
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 ```
+
+## Git Large Files
+```
+initialize git lfs: git lfs install
+set tracking files: git lfs track "*.zip"
+```
