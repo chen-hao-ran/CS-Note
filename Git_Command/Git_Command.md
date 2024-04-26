@@ -1,34 +1,43 @@
 # Some of basic commands for git
+## Common commands
+```
+clone repo: git clone <address of repo>
+initialize repo: git init
 
-克隆仓库
-```
-git clone (address of repo)
-```
+Associate the remote reop: git remote add <connect name default:origin> <address of repo>
+Unassociate the remote repo : git remote remove <connect name>
+!Associate when origin is not null: git pull <connect name> <branch name> --allow-unrelated-histories 
+Check remote connection: git remote -v
 
-初始化仓库
-```
-git init
-```
+Pull: git pull <connect name> <branch name>
+Push: git push <connect name> <branch name>
 
-关联远程仓库
-```
-git remote add (connect name default:origin) (address of repo)
-git remote remove (connect name)
+Commit: git commit -m ""
 
-git pull (connect name) (branch name) --allow-unrelated-histories // 关联非空远程仓库后
-```
+Check prior log: git log --pretty=oneline
+Check later log: git reflog --pretty=oneline
 
-查看远程连接
-```
-git remote -v
-```
+Get specified [id]version: git reset --head id
 
-pull
-```
-git pull (connect name) (branch name)
+Check configuration: git config -l
 ```
 
-push
+
+## Vpn speed up
+* socks5协议，1080端口修改成自己的本地代理端口
 ```
-git push (connect name) (branch name)
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
+git config --global https.https://github.com.proxy socks5://127.0.0.1:7890
+```
+
+* http协议，1081端口修改成自己的本地代理端口
+```
+git config --global http.https://github.com.proxy https://127.0.0.1:7890
+git config --global https.https://github.com.proxy https://127.0.0.1:7890
+```
+
+* Reset proxy
+```
+git config --global --unset http.proxy
+git config --global --unset https.proxy
 ```
