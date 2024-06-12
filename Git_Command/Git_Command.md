@@ -11,6 +11,7 @@ Check remote connection: git remote -v
 
 Pull: git pull <connect name> <branch name>
 Push: git push <connect name> <branch name>
+First Push: git push -u <connect name> <branch name>
 
 Commit: git commit -m ""
 
@@ -47,3 +48,20 @@ git config --global --unset https.proxy
 initialize git lfs: git lfs install
 set tracking files: git lfs track "*.zip"
 ```
+
+
+
+## LF will be replaced by CRLF the next time Git touches it
+
+The issue: 不同OS之间的换行符不同，会出现转换问题
+
+Solution: 
+
+```
+# 使 Git 在检出文件时将 LF 转换为 CRLF，并在提交时将 CRLF 转换回 LF
+git config --global core.autocrlf true
+
+# 告诉 Git 不要进行任何自动的行结束符转换
+git config --global core.autocrlf false
+```
+
