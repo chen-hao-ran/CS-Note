@@ -1,26 +1,47 @@
 # Some of basic commands for git
 ## Common commands
 ```
-clone repo: git clone <address of repo>
-initialize repo: git init
+#克隆仓库
+git clone <address of repo>
 
-Associate the remote reop: git remote add <connect name default:origin> <address of repo>
+#初始化仓库
+git init
+
+#关联远程仓库
+git remote add <connect name default:origin> <address of repo>
+
+#解绑远程仓库
 Unassociate the remote repo : git remote remove <connect name>
-!Associate when origin is not null: git pull <connect name> <branch name> --allow-unrelated-histories 
-Check remote connection: git remote -v
 
-Pull: git pull <connect name> <branch name>
-Push: git push <connect name> <branch name>
-First Push: git push -u <connect name> <branch name>
+#!Associate when origin is not null:
+git pull <connect name> <branch name> --allow-unrelated-histories 
 
-Commit: git commit -m ""
+#查看远程仓库
+git remote -v
 
-Check prior log: git log --pretty=oneline
-Check later log: git reflog --pretty=oneline
+#Pull
+git pull <connect name> <branch name>
 
-Get specified [id]version: git reset --head id
+#Push
+git push <connect name> <branch name>
 
-Check configuration: git config -l
+#First Push
+git push -u <connect name> <branch name>
+
+#提交
+git commit -m ""
+
+#Check prior log
+git log --pretty=oneline
+
+#Check later log
+git reflog --pretty=oneline
+
+#Get specified [id]version
+git reset --head id
+
+#查看配置
+git config -l
 ```
 
 
@@ -46,14 +67,14 @@ git config --global --unset https.proxy
 ## Git Large Files
 ```
 initialize git lfs: git lfs install
-set tracking files: git lfs track "*.zip"
+set tracking files: git lfs track "*.zip"I
 ```
 
 
 
 ## LF will be replaced by CRLF the next time Git touches it
 
-The issue: 不同OS之间的换行符不同，会出现转换问题
+Issue: 不同OS之间的换行符不同，会出现转换问题
 
 Solution: 
 
